@@ -1,7 +1,7 @@
 class paper{
     constructor(x, y, r){
         var options = {
-            isStatic:false,
+            isStatic:true,
             restitution:0.3,
             friction:0.5,
             density:1.2
@@ -11,6 +11,7 @@ class paper{
         this.r = r;
         this.body = Bodies.circle(this.x, this.y, this.r/2, options);
         this.image = loadImage("sprite/paper1.png");
+        World.add(world, this.body);
     }
     display(){
         var paperPos = this.body.position
